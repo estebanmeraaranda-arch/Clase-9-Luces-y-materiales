@@ -24,4 +24,6 @@ icons.forEach(icon => {
 });
 
 // Selección inicial (primer icono)
-icons[0].click();
+if (icons.length > 0) {
+  icons[0].click();
+}
