@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Model Viewer</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- model-viewer -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+
+  <!-- CSS personalizado -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Menú superior -->
+  <nav class="navbar custom-navbar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex gap-3">
+        <img src="./imgviewer/Bioma.png" alt="Bioma" class="model-icon" data-target="bioma">
+        <img src="./imgviewer/Pinguino.png" alt="Pingüino" class="model-icon" data-target="pinguino">
+        <img src="./imgviewer/Baston.png" alt="Bastón" class="model-icon" data-target="baston">
+      </div>
+          <div class="text-end text-white">
+      <strong>Esteban Camilo Mera</strong><br>
+      <small>Computación Gráfica</small>
+    </div>
+  </nav>
+
+  <!-- Contenedor de modelos -->
+  <div id="models-container">
+    <model-viewer id="bioma" class="model-viewer"
+      src="./assets/models/glb/Bioma nieve.glb"
+      alt="Bioma nieve"
+      camera-controls>
+    </model-viewer>
+
+    <model-viewer id="pinguino" class="model-viewer"
+      src="./assets/models/glb/Pinguino magico.glb"
+      alt="Pingüino mágico"
+      camera-controls
+      camera-orbit="60deg 75deg 7.5m"
+      >
+    </model-viewer>
+
+    <model-viewer id="baston" class="model-viewer"
+      src="./assets/models/glb/Baston magico.glb"
+      alt="Bastón mágico"
+      camera-controls
+      camera-orbit="60deg 75deg 7.5m"
+      >
+      
+    </model-viewer>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JS personalizado -->
+  <script src="main.js"></script>
+</body>
+</html>

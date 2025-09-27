@@ -7,19 +7,71 @@
     <title>Model viewer </title>
     <!-- Import the component -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
+<style>
+  .viewer-flex {
+    display: flex;
+    width: 99vw;
+    height: 90vh;
+    overflow: hidden;
+  }
+  .viewer-model {
+    flex: 1;
+    height: 100%;
+    object-fit: contain;
+  }
+</style>
 </head>
 
 <body>
-    <!-- Use it like any other HTML element -->
-    <model-viewer
-        style="width: 100%; height: 100%; position: fixed;"
-        alt="Pinguino magico"
-        src="./assets/models/glb/Pinguino magico.glb" ar 
-        poster=""
-        shadow-intensity="1" 
-        camera-controls
-        touch-action="pan-y"></model-viewer>
-</body>
+     <nav class="navbar bg-body-tertiary">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <!-- <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Bootstrap" width="30" height="24"> -->
+      <!-- Replace with your logo if needed, e.g.: -->
+      <!-- <img src="./assets/images/your-logo.png" alt="Logo" width="30" height="24"> -->
+    </a>
+  </div>
+</nav>
+ <div class="viewer-flex">
 
-</html>
+  <!-- Bioma -->
+  <model-viewer
+      class="viewer-model"
+      alt="Bioma nieve"
+      src="./assets/models/glb/Bioma nieve.glb" ar 
+      poster=""
+      shadow-intensity="1" 
+      camera-controls
+      touch-action="pan-y">
+  </model-viewer>
+
+  <!-- Pingüino (ajustado al alto de la pantalla) -->
+  <model-viewer
+      class="viewer-model"
+      alt="Pingüino mágico"
+      src="./assets/models/glb/Pinguino magico.glb" ar 
+      poster=""
+      shadow-intensity="1" 
+      camera-controls
+      camera-orbit="60deg 75deg 7.5m"
+      touch-action="pan-y"
+      field-of-view="30deg">
+  </model-viewer>
+
+  <!-- Bastón (se ve completo) -->
+  <model-viewer
+      class="viewer-model"
+      alt="Bastón mágico"
+      src="./assets/models/glb/Baston magico.glb" ar 
+      poster=""
+      scale="1 1 1"
+      shadow-intensity="1" 
+      camera-controls
+      camera-orbit="45deg 75deg 7.5m"
+      field-of-view="25deg"
+      touch-action="pan-y">
+  </model-viewer>
+
+</div>

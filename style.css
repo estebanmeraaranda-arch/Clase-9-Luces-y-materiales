@@ -1,0 +1,62 @@
+/* --- Estilo del menú --- */
+.model-icon {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+
+}
+.custom-navbar {
+  background-color: #0d1b2a !important; /* Azul oscuro */
+    padding-top: 20px;
+  padding-bottom: 20px;
+}
+/* Icono seleccionado */
+.model-icon.active {
+  transform: scale(1.2);
+  filter: none;
+}
+
+/* Iconos no seleccionados */
+.model-icon.inactive {
+  filter: blur(3px) brightness(0.6);
+}
+
+.navbar .text-end {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.2;
+}
+/* --- Estilo de modelos --- */
+#models-container {
+  display: flex;
+  justify-content: center;  /* Centra los modelos horizontalmente */
+  align-items: center;      /* Centra verticalmente si sobra espacio */
+  gap: 0;                   /* Espacio entre modelos */
+  width: 98vw;
+  height: 80vh;
+  overflow: hidden;
+}
+
+/* Modelos */
+.model-viewer {
+  margin-top: 10px;
+  margin-left: 20px;
+  width: 30%;     /* Tamaño relativo, ajusta a gusto */
+  height: 70%;    /* Que no se salga del contenedor */
+  object-fit: contain;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Modelo activo */
+.model-viewer.active {
+  filter: none;
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+/* Modelos inactivos */
+.model-viewer.inactive {
+  filter: blur(5px) brightness(0.7);
+  z-index: 1;
+}
